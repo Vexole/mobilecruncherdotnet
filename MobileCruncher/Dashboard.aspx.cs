@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace MobileCruncher
 {
@@ -6,7 +11,11 @@ namespace MobileCruncher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!HttpContext.Current.User.Identity.IsAuthenticated 
+                || HttpContext.Current.User.Identity.Name != "admin@mobilecrunchers.com")
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void dtlViewProductDetails_ItemDeleted(object sender, System.Web.UI.WebControls.DetailsViewDeletedEventArgs e)
@@ -14,8 +23,43 @@ namespace MobileCruncher
             Response.Redirect("~/Dashboard.aspx");
         }
 
-        protected void dtlViewProductDetails_ItemInserted(object sender, System.Web.UI.WebControls.DetailsViewInsertedEventArgs e)
+        protected void dtlViewProductDetails_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
         {
+            var param = SqlDataSource1.InsertParameters;
+            param["name"].DefaultValue = e.Values["Name"].ToString();
+            param["price"].DefaultValue = e.Values["Price"].ToString();
+            SqlDataSource1.Insert();
+
+            DataSourceSelectArguments args = new DataSourceSelectArguments();
+            var result = sqlLastRowId.Select(args).Cast<DataRowView>().FirstOrDefault();
+
+            string id = "";
+            if (result != null)
+            {
+                id = result["ID"].ToString();
+            }
+            
+            var parameters = sqlDSProductDetails.InsertParameters;
+            parameters["RAM"].DefaultValue = e.Values["RAM"].ToString();
+            parameters["StorageCapacity"].DefaultValue = e.Values["StorageCapacity"].ToString();
+            parameters["ScreenSize"].DefaultValue = e.Values["ScreenSize"].ToString();
+            parameters["ProcessorSpeed"].DefaultValue = e.Values["ProcessorSpeed"].ToString();
+            parameters["OpticalSensorResolution"].DefaultValue = e.Values["OpticalSensorResolution"].ToString();
+            parameters["Weight"].DefaultValue = e.Values["Weight"].ToString();
+            parameters["Dimension"].DefaultValue = e.Values["Dimension"].ToString();
+            parameters["ManufacturerId"].DefaultValue = e.Values["ManufacturerId"].ToString();
+            parameters["OperatingSystemId"].DefaultValue = e.Values["OperatingSystemId"].ToString();
+            parameters["ProcessorTypeId"].DefaultValue = e.Values["ProcessorTypeId"].ToString();
+            parameters["ProductId"].DefaultValue = id;
+            try
+            {
+                sqlDSProductDetails.Insert();
+    
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             Response.Redirect("~/Dashboard.aspx");
         }
 

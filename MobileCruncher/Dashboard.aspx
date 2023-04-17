@@ -22,15 +22,123 @@
     <asp:DetailsView ID="dtlViewProductDetails" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated">
         <Fields>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}" />
-            <asp:BoundField DataField="RAM" HeaderText="RAM" SortExpression="RAM" />
-            <asp:BoundField DataField="StorageCapacity" HeaderText="Storage Capacity" SortExpression="StorageCapacity" />
-            <asp:BoundField DataField="ScreenSize" HeaderText="Screen Size" SortExpression="ScreenSize" />
-            <asp:BoundField DataField="ProcessorSpeed" HeaderText="Processor Speed" SortExpression="ProcessorSpeed" />
-            <asp:BoundField DataField="OpticalSensorResolution" HeaderText="Optical Sensor Resolution" SortExpression="OpticalSensorResolution" />
-            <asp:BoundField DataField="Weight" HeaderText="Weight" SortExpression="Weight" />
-            <asp:BoundField DataField="Dimension" HeaderText="Dimension" SortExpression="Dimension" />
+            <asp:TemplateField HeaderText="Name" SortExpression="Name">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Name") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditName" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Name") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertName" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Name") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Price" SortExpression="Price">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditPrice" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Price", "{0:c}") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertPrice" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Price", "{0:c}") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="RAM" SortExpression="RAM">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("RAM") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditRAM" runat="server" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("RAM") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertRAM" runat="server" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("RAM") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Storage Capacity" SortExpression="StorageCapacity">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("StorageCapacity") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditSC" runat="server" ControlToValidate="TextBox4" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("StorageCapacity") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertSC" runat="server" ControlToValidate="TextBox4" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("StorageCapacity") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Screen Size" SortExpression="ScreenSize">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("ScreenSize") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditSS" runat="server" ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("ScreenSize") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertSS" runat="server" ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("ScreenSize") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Processor Speed" SortExpression="ProcessorSpeed">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("ProcessorSpeed") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditPS" runat="server" ControlToValidate="TextBox6" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("ProcessorSpeed") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertPS" runat="server" ControlToValidate="TextBox6" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("ProcessorSpeed") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Optical Sensor Resolution" SortExpression="OpticalSensorResolution">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("OpticalSensorResolution") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditOSR" runat="server" ControlToValidate="TextBox7" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("OpticalSensorResolution") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertOSR" runat="server" ControlToValidate="TextBox7" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label7" runat="server" Text='<%# Bind("OpticalSensorResolution") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Weight" SortExpression="Weight">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Weight") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditW" runat="server" ControlToValidate="TextBox8" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Weight") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertW" runat="server" ControlToValidate="TextBox8" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label8" runat="server" Text='<%# Bind("Weight") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Dimension" SortExpression="Dimension">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Dimension") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEditD" runat="server" ControlToValidate="TextBox9" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Dimension") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVInsertD" runat="server" ControlToValidate="TextBox9" Display="Dynamic" ErrorMessage="This field is required." Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label9" runat="server" Text='<%# Bind("Dimension") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Manufacturer" SortExpression="Manufacturer">
                 <EditItemTemplate>
                     <asp:DropDownList ID="drpDwnManufacturer" runat="server" DataSourceID="sqlDSManufacturers" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("ManufacturerId") %>'>
@@ -77,8 +185,21 @@
         </Fields>
     </asp:DetailsView>
     <asp:SqlDataSource ID="sqlDSProductDetails" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-        DeleteCommand="DELETE FROM [product_details] WHERE [id] = @id; DELETE FROM [products] WHERE [id] = @id" 
-        InsertCommand="INSERT INTO [products] ([name], [price], [quantity], [image_path]) VALUES (@name, @price, @quantity, @image_path)" 
+        DeleteCommand="DELETE FROM [product_details] WHERE [product_id] = @id; DELETE FROM [products] WHERE [id] = @id" 
+        InsertCommand="INSERT INTO [product_details] ([ram], [storage_capacity], [screen_size],
+                        [processor_speed], [optical_sensor_resolution], [weight], [dimension], [product_id],
+                        [manufacturer_id], [processor_type_id], [os_id]) VALUES 
+                        (@RAM,
+                        @StorageCapacity,
+                        @ScreenSize,
+                        @processorSpeed,
+                        @OpticalSensorResolution,
+                        @Weight,
+                        @Dimension,
+                        @ProductId,
+                        @ManufacturerId,
+                        @ProcessorTypeId,
+                        @OperatingSystemId)" 
         SelectCommand="SELECT p.Id, p.Name, p.Price, pd.ram AS 'RAM',
                         pd.storage_capacity AS 'StorageCapacity', pd.screen_size AS 'ScreenSize', 
                         pd.processor_speed AS 'ProcessorSpeed', 
@@ -98,10 +219,17 @@
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="name" Type="String" />
-            <asp:Parameter Name="price" Type="Decimal" />
-            <asp:Parameter Name="quantity" Type="Int32" />
-            <asp:Parameter Name="image_path" Type="String" />
+            <asp:Parameter Name="RAM" Type="String" />
+            <asp:Parameter Name="StorageCapacity" Type="String" />
+            <asp:Parameter Name="ScreenSize" Type="String" />
+            <asp:Parameter Name="ProcessorSpeed" Type="String" />
+            <asp:Parameter Name="OpticalSensorResolution" Type="String" />
+            <asp:Parameter Name="Weight" Type="String" />
+            <asp:Parameter Name="Dimension" Type="String" />
+            <asp:Parameter Name="ManufacturerId" Type="Int32" />
+            <asp:Parameter Name="OperatingSystemId" Type="Int32" />
+            <asp:Parameter Name="ProcessorTypeId" Type="Int32" />
+            <asp:Parameter Name="ProductId" Type="Int32" />
         </InsertParameters>
         <SelectParameters>
             <asp:ControlParameter ControlID="grdViewProducts" Name="id" PropertyName="SelectedValue" Type="Int32" />
@@ -122,6 +250,7 @@
             <asp:Parameter Name="Id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="sqlLastRowId" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 1 [id] FROM [products] ORDER BY [id] DESC"></asp:SqlDataSource>
     <asp:SqlDataSource ID="sqlDSManufacturers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [manufacturers] WHERE [id] = @id" InsertCommand="INSERT INTO [manufacturers] ([name]) VALUES (@name)" SelectCommand="SELECT * FROM [manufacturers]" UpdateCommand="UPDATE [manufacturers] SET [name] = @name WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
@@ -146,11 +275,11 @@
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers">
+    <asp:GridView ID="grdViewManufacturers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers">
         <Columns>
-            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+            <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="sqlDSProcessorTypes" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [processor_types] WHERE [id] = @id" InsertCommand="INSERT INTO [processor_types] ([name]) VALUES (@name)" SelectCommand="SELECT * FROM [processor_types]" UpdateCommand="UPDATE [processor_types] SET [name] = @name WHERE [id] = @id">
@@ -162,6 +291,27 @@
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="id" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes">
+        <Columns>
+            <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+            <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [products] WHERE [id] = @id" InsertCommand="INSERT INTO [products] ([name], [price]) VALUES (@name, @price)" SelectCommand="SELECT [id], [name], [price] FROM [products]" UpdateCommand="UPDATE [products] SET [name] = @name, [price] = @price WHERE [id] = @id">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="price" Type="Decimal" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="price" Type="Decimal" />
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
