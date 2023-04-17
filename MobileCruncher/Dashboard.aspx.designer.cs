@@ -96,13 +96,13 @@ namespace MobileCruncher
         protected global::System.Web.UI.WebControls.SqlDataSource sqlDSProcessorTypes;
 
         /// <summary>
-        /// GridView1 control.
+        /// grdViewProcessorTypes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grdViewProcessorTypes;
 
         /// <summary>
         /// SqlDataSource1 control.

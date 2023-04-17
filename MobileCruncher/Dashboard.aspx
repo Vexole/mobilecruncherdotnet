@@ -275,11 +275,43 @@
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="grdViewManufacturers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers">
+    <asp:GridView ID="grdViewManufacturers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers" ShowFooter="True">
         <Columns>
-            <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-            <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
+                <EditItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                </ItemTemplate>
+                 <FooterTemplate>
+                    <asp:LinkButton ID="lnkBtnManuInsert" runat="server" OnClick="LnkBtnManuInsert_Click" ValidationGroup="manufacturer">Insert</asp:LinkButton>
+                </FooterTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Name" SortExpression="name">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("name") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("name") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtManufacturer" runat="server" ControlToValidate="txtManufacturer" ValidationGroup="manufacturer"></asp:TextBox>
+                </FooterTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                </ItemTemplate>
+                <FooterTemplate>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtManufacturer" ValidationGroup="manufacturer" CssClass="red"></asp:RequiredFieldValidator>
+                </FooterTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="sqlDSProcessorTypes" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [processor_types] WHERE [id] = @id" InsertCommand="INSERT INTO [processor_types] ([name]) VALUES (@name)" SelectCommand="SELECT * FROM [processor_types]" UpdateCommand="UPDATE [processor_types] SET [name] = @name WHERE [id] = @id">
@@ -294,11 +326,43 @@
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes">
+    <asp:GridView ID="grdViewProcessorTypes" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes" ShowFooter="True">
         <Columns>
-            <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-            <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
+                <EditItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:LinkButton ID="lnkBtnProcInsert" runat="server" OnClick="LnkBtnProcInsert_Click" ValidationGroup="processor">Insert</asp:LinkButton>
+                </FooterTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Name" SortExpression="name">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("name") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("name") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtProcessor" runat="server" ValidationGroup="processor"></asp:TextBox>
+                </FooterTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                </ItemTemplate>
+                <FooterTemplate>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtProcessor" ValidationGroup="processor" CssClass="red"></asp:RequiredFieldValidator>
+                </FooterTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [products] WHERE [id] = @id" InsertCommand="INSERT INTO [products] ([name], [price]) VALUES (@name, @price)" SelectCommand="SELECT [id], [name], [price] FROM [products]" UpdateCommand="UPDATE [products] SET [name] = @name, [price] = @price WHERE [id] = @id">

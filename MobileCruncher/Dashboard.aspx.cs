@@ -18,6 +18,20 @@ namespace MobileCruncher
             }
         }
 
+        protected void LnkBtnProcInsert_Click(object sender, EventArgs e)
+        {
+            sqlDSProcessorTypes.InsertParameters["name"].DefaultValue =
+                ((TextBox)grdViewProcessorTypes.FooterRow.FindControl("txtProcessor")).Text;
+            sqlDSProcessorTypes.Insert();
+        }
+
+        protected void LnkBtnManuInsert_Click(object sender, EventArgs e)
+        {
+            sqlDSManufacturers.InsertParameters["name"].DefaultValue =
+                ((TextBox)grdViewManufacturers.FooterRow.FindControl("txtManufacturer")).Text;
+            sqlDSManufacturers.Insert();
+        }
+
         protected void dtlViewProductDetails_ItemDeleted(object sender, System.Web.UI.WebControls.DetailsViewDeletedEventArgs e)
         {
             Response.Redirect("~/Dashboard.aspx");
@@ -66,6 +80,11 @@ namespace MobileCruncher
         protected void dtlViewProductDetails_ItemUpdated(object sender, System.Web.UI.WebControls.DetailsViewUpdatedEventArgs e)
         {
             Response.Redirect("~/Dashboard.aspx");
+        }
+
+        protected void grdViewManufacturers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

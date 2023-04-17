@@ -165,6 +165,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="App_Data\MobileCruncher.mdf" />
+    <Content Include="App_Data\MobileCruncher_log.ldf">
+      <DependentUpon>MobileCruncher.mdf</DependentUpon>
+    </Content>
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Confirmation.aspx" />

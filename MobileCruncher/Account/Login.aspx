@@ -5,7 +5,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <main aria-labelledby="title">
         <h2 id="title" class="text-center mb-3 mc-color-primary"><%: Title %>.</h2>
-        <div class="col-md-6 card pt-4 mx-auto">
+        <div class="col-md-10 col-lg-6 card pt-4 mx-auto">
             <section id="loginForm">
                 <div class="row justify-content-center">
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">

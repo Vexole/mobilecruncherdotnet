@@ -6,6 +6,10 @@
     padding-right: 15px;
 }
 
+.red {
+    color: red;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -57,6 +61,9 @@ footer p {
     margin: 0;
 }
 
+#socialLoginForm {
+    display: none;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
