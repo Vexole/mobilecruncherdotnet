@@ -19,7 +19,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
-    max-width: 280px;
+    max-width: 300px;
 }
 
 .select-view {
@@ -28,6 +28,33 @@ input[type="select"] {
     background-color: transparent;
     color: inherit;
     font-size: inherit;
+}
+
+.mc-bg-primary {
+    background-color: #2163c6;
+    color: #ffffff !important;
+}
+
+.mc-color-primary {
+    color: #2163c6;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ffffff !important;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+footer {
+    background-color: #2163c6;
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
 }
 
 
