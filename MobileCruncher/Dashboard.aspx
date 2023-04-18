@@ -10,8 +10,8 @@
     </asp:SqlDataSource>
     
     <h4 class="text-center mc-color-secondary">Products List</h4>
-    <div class="product_details_container">
-        <div class="d-flex mt-3 mx-auto justify-content-center">
+    <div class="product_details_container mx-auto justify-content-center">
+        <div class="d-flex mt-3">
             <asp:GridView ID="grdViewProducts" runat="server" DataSourceID="sqlDSProductsList" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="me-4" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdViewProducts_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
@@ -35,7 +35,7 @@
             </asp:GridView>
         </div>
 
-        <div class="d-flex mt-4 mx-auto justify-content-center">
+        <div class="d-flex mt-4">
             <asp:DetailsView ID="dtlViewProductDetails" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
                 <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                 <Fields>

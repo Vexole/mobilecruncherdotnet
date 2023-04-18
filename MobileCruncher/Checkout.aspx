@@ -67,9 +67,9 @@
                 </div>
 
                 <div class="buttons-form-container mt-4 d-flex justify-content-around">
-                    <asp:Button ID="btnCheckOut" runat="server" Text="Proceed" CssClass="checkout btn btn-primary btn-sm" OnClick="btnCheckOut_Click" />
+                    <asp:Button ID="btnCheckOut" runat="server" Text="Proceed" CssClass="checkout btn btn-success btn-sm" OnClick="btnCheckOut_Click" />
                     <asp:Button ID="btnGotoCart" runat="server" CssClass="goto-cart btn btn-primary btn-sm" PostBackUrl="~/Cart.aspx" CausesValidation="False" Text="Go to Cart" />
-                    <asp:LinkButton ID="btnContinueShopping" CssClass="btn btn-primary btn-sm" runat="server" PostBackUrl="~/Products.aspx" CausesValidation="False">Continue Shopping</asp:LinkButton>
+                    <asp:LinkButton ID="btnContinueShopping" CssClass="" runat="server" PostBackUrl="~/Products.aspx" CausesValidation="False">Continue Shopping</asp:LinkButton>
                     <asp:SqlDataSource ID="sqlDSOrders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [orders] WHERE [id] = @id" InsertCommand="INSERT INTO [orders] ([total], [customer_id]) VALUES (@total, @customer_id)" SelectCommand="SELECT * FROM [orders]" UpdateCommand="UPDATE [orders] SET [total] = @total, [customer_id] = @customer_id WHERE [id] = @id">
                         <DeleteParameters>
                             <asp:Parameter Name="id" Type="Int32" />

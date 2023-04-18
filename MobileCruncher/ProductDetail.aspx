@@ -8,7 +8,7 @@
     </asp:ObjectDataSource>
     <h1 class="text-center my-4 mc-color-primary">MobileCrunchers - Product Details</h1>
 
-    <div class="d-flex justify-content-center my-5">
+    <div class="d-flex justify-content-center product_detail my-5">
         <asp:Image ID="imgProduct" runat="server" CssClass="product-image me-5" />
 
         <asp:DetailsView ID="dtlViewProduct" CssClass="p-4" runat="server" AutoGenerateRows="False" DataSourceID="ProductDetailDataSource" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -46,7 +46,7 @@
     </asp:DropDownList>
     <asp:Button ID="btnAddToCart" runat="server" CssClass="btn btn-primary" OnClick="btnAddToCart_Click" Text="Add to Cart" />
     </div>
-    <div class="d-flex mx-auto col-md-4 mt-5">
+    <div class="d-flex product_detail_buttons mx-auto col-md-4 mt-5">
            <asp:Button ID="btnFacebookShare" runat="server" CssClass="btn btn-outline-primary btn-rounded me-3" Text="Share on Facebook" OnClick="btnFacebookShare_Click" />
 
             <asp:Button ID="btnGoogleShare" runat="server" CssClass="btn btn-outline-primary btn-rounded me-3" Text="Share on Google+" OnClick="btnGoogleShare_Click" />

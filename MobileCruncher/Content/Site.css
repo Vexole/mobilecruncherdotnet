@@ -96,6 +96,10 @@ footer p {
     display: flex;
 }
 
+.product_detail, .product_detail_buttons {
+    flex-direction: row;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {
@@ -106,5 +110,25 @@ footer p {
 @media screen and (max-width: 768px) {
     #products-container {
         width: 100%;
+    }
+
+    .lists, .product_details_container {
+        flex-direction: column;
+    }
+
+    .product_detail, .product_detail_buttons {
+        flex-direction: column;
+    }
+
+    .product_detail_buttons input {
+        margin-right: 0 !important;
+        margin: 8px;
+    }
+
+    .product-image {
+        width: 45%;
+        margin: auto;
+        margin-right: 0 !important;
+        margin-bottom: 8px;
     }
 }
