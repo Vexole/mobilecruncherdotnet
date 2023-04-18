@@ -8,7 +8,7 @@
     </asp:ObjectDataSource>
     <h1 class="text-center my-4 mc-color-primary">MobileCrunchers - Product Details</h1>
 
-    <div class="d-flex justify-content-center product_detail my-5">
+    <div class="d-flex justify-content-center align-items-center product_detail my-5">
         <asp:Image ID="imgProduct" runat="server" CssClass="product-image me-5" />
 
         <asp:DetailsView ID="dtlViewProduct" CssClass="p-4" runat="server" AutoGenerateRows="False" DataSourceID="ProductDetailDataSource" CellPadding="4" ForeColor="#333333" GridLines="None">
