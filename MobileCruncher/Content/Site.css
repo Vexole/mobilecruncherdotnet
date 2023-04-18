@@ -94,6 +94,7 @@ footer p {
 
 .product_details_container {
     display: flex;
+    gap: 8px;
 }
 
 .product_detail, .product_detail_buttons {

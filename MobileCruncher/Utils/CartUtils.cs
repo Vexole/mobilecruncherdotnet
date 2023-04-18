@@ -82,6 +82,10 @@ namespace BMobileCruncher.Utils
          */
         public static void ClearCart()
         {
+            CartObject cart = GetCart();
+            cart.Total = 0;
+            cart.Customer = string.Empty;
+            cart.ShippingCustomer = null;
             GetCartItems().Clear();
         }
 

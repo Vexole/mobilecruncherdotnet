@@ -67,6 +67,8 @@ namespace MobileCruncher
 
                 sqlDSOrderDetails.Insert();
             });
+
+            CartUtils.ClearCart();
             Response.Redirect("~/Confirmation.aspx");
         }
     }
