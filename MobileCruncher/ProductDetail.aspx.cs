@@ -15,6 +15,12 @@ namespace MobileCruncher
             {
                 Response.Redirect("~/Products.aspx");
             }
+
+            IEnumerable products = ProductDetailDataSource.Select();
+            foreach (Product product in products)
+            {
+                imgProduct.ImageUrl = "~/Images/" + product.ImagePath;
+            }
         }
 
         protected void btnAddToCart_Click(object sender, EventArgs e)

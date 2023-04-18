@@ -62,6 +62,16 @@ namespace MobileCruncher
                     throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
                 }
             }
+
+            if (!HttpContext.Current.User.Identity.IsAuthenticated
+                || HttpContext.Current.User.Identity.Name != "admin@mobilecrunchers.com")
+            {
+                navDashboard.Visible = false;
+            } else
+            {
+                navDashboard.Visible = true;
+            }
+
         }
 
         protected void Page_Load(object sender, EventArgs e)

@@ -6,6 +6,7 @@
             <section>
                 <div class="row justify-content-center">
                     <h5 class="text-center mx-5">Thanks For Your Order! Our team will prepare your order, soon you hear from us.</h5>
+                    <a class="text-center mx-5" href="Products.aspx">Continue Shopping</a>
                 </div>
             </section>
         </div>

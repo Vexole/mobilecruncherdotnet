@@ -70,6 +70,37 @@
                     <asp:Button ID="btnCheckOut" runat="server" Text="Proceed" CssClass="checkout" OnClick="btnCheckOut_Click" />
                     <asp:Button ID="btnGotoCart" runat="server" PostBackUrl="~/Cart.aspx" CausesValidation="False" Text="Go to Cart" CssClass="goto-cart" />
                     <asp:LinkButton ID="btnContinueShopping" runat="server" PostBackUrl="~/Products.aspx" CausesValidation="False">Continue Shopping</asp:LinkButton>
+                    <asp:SqlDataSource ID="sqlDSOrders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [orders] WHERE [id] = @id" InsertCommand="INSERT INTO [orders] ([total], [customer_id]) VALUES (@total, @customer_id)" SelectCommand="SELECT * FROM [orders]" UpdateCommand="UPDATE [orders] SET [total] = @total, [customer_id] = @customer_id WHERE [id] = @id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="total" Type="Decimal" />
+                            <asp:Parameter Name="customer_id" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="total" Type="Decimal" />
+                            <asp:Parameter Name="customer_id" Type="String" />
+                            <asp:Parameter Name="id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                    <asp:SqlDataSource ID="sqlDSOrderDetails" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [order_details] WHERE [id] = @id" InsertCommand="INSERT INTO [order_details] ([order_id], [product_id], [quantity]) VALUES (@order_id, @product_id, @quantity)" SelectCommand="SELECT * FROM [order_details]" UpdateCommand="UPDATE [order_details] SET [order_id] = @order_id, [product_id] = @product_id, [quantity] = @quantity WHERE [id] = @id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="id" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="order_id" Type="Int32" />
+                            <asp:Parameter Name="product_id" Type="Int32" />
+                            <asp:Parameter Name="quantity" Type="Int32" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="order_id" Type="Int32" />
+                            <asp:Parameter Name="product_id" Type="Int32" />
+                            <asp:Parameter Name="quantity" Type="Int32" />
+                            <asp:Parameter Name="id" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                    <asp:SqlDataSource ID="sqlDSLastInsertedRow" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 1 id FROM [orders] ORDER BY [id] DESC"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

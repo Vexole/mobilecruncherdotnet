@@ -8,12 +8,12 @@
     </asp:ObjectDataSource>
     <h1 class="text-center my-4">MobileCrunchers - Product Detail</h1>
 
+    <asp:Image ID="imgProduct" runat="server" />
+
     <asp:DetailsView ID="dtlViewProduct" class="mx-auto p-2" runat="server" AutoGenerateRows="False" DataSourceID="ProductDetailDataSource" Height="50px" Width="125px">
         <Fields >
             <asp:BoundField DataField="Name" HeaderText="Name:" SortExpression="Name" />
             <asp:BoundField DataField="Price" HeaderText="Price:" SortExpression="Price" />
-            <asp:BoundField DataField="Quantity" HeaderText="Quantity:" SortExpression="Quantity" />
-            <asp:BoundField DataField="ImagePath" HeaderText="ImagePath" SortExpression="ImagePath" />
             <asp:BoundField DataField="RAM" HeaderText="RAM:" SortExpression="RAM" />
             <asp:BoundField DataField="StorageCapacity" HeaderText="StorageCapacity:" SortExpression="StorageCapacity" />
             <asp:BoundField DataField="ScreenSize" HeaderText="ScreenSize:" SortExpression="ScreenSize" />

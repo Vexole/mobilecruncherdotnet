@@ -63,7 +63,6 @@ namespace MobileCruncher.Models
                         product.Id = Int32.Parse(reader["id"].ToString());
                         product.Name = reader["name"].ToString();
                         product.Price = Double.Parse(reader["price"].ToString());
-                        product.Quantity = reader["quantity"].ToString();
                         product.ImagePath = reader["image_path"].ToString();
                         product.RAM = reader["ram"].ToString();
                         product.StorageCapacity = reader["storage_capacity"].ToString();

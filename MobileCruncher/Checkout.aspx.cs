@@ -1,6 +1,9 @@
 ﻿using BMobileCruncher.Utils;
 using MobileCruncher.Models;
 using System;
+using System.Data;
+using System.Linq;
+using System.Web.UI;
 
 namespace MobileCruncher
 {
@@ -33,6 +36,37 @@ namespace MobileCruncher
             };
 
             CartUtils.SetShippingCustomer(customer);
+
+            var cart = CartUtils.GetCart();
+            var cartItems = CartUtils.GetCartItems();
+
+            sqlDSOrders.InsertParameters["total"].DefaultValue =
+                    cart.Total.ToString();
+            sqlDSOrders.InsertParameters["customer_id"].DefaultValue =
+                    cart.Customer.ToString();
+
+            sqlDSOrders.Insert();
+
+            DataSourceSelectArguments args = new DataSourceSelectArguments();
+            var result = sqlDSLastInsertedRow.Select(args).Cast<DataRowView>().FirstOrDefault();
+
+            string order_id = "";
+            if (result != null)
+            {
+                order_id = result["ID"].ToString();
+            }
+
+            cartItems.ForEach(item =>
+            {
+                sqlDSOrderDetails.InsertParameters["order_id"].DefaultValue =
+                    order_id;
+                sqlDSOrderDetails.InsertParameters["product_id"].DefaultValue =
+                    item.Product.Id.ToString();
+                sqlDSOrderDetails.InsertParameters["quantity"].DefaultValue =
+                    item.Quantity.ToString();
+
+                sqlDSOrderDetails.Insert();
+            });
             Response.Redirect("~/Confirmation.aspx");
         }
     }
