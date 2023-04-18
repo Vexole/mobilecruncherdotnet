@@ -64,6 +64,10 @@ input[type="select"] {
     color: #ffffff !important;
 }
 
+#logo {
+  width: 160px;
+}
+
 .product-image {
     width: 25%;
     max-height: 375px;
