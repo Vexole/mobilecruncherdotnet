@@ -10,6 +10,11 @@
     color: red;
 }
 
+a{
+    text-decoration: none;
+
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -65,6 +70,13 @@ footer p {
     display: none;
 }
 
+#MainContent_grdViewCartItems tbody tr th, td{
+    padding: 10px;
+}
+
+#MainContent_drpdnListState{
+    width: 188px !important;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {

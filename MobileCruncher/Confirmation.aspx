@@ -6,6 +6,9 @@
             <section>
                 <div class="row justify-content-center">
                     <h5 class="text-center mx-5">Thanks For Your Order! Our team will prepare your order, soon you hear from us.</h5>
+                    <div class="col-8 mb-2">
+                        <img src="images/thankyoufororder.jpeg" class="card-img-top mt-3" style="object-fit:cover" alt="Thank you for Order" />
+                    </div>
                 </div>
             </section>
         </div>

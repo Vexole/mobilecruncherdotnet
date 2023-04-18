@@ -6,7 +6,7 @@
     <h2 class="text-center my-4 mc-color-secondary">About Us</h2>
     <div class="d-flex justify-content-center align-items-center">
       <div class="col-md-6 p-3 text-center fst-italic">
-        <At> Welcome to our mobile store! We are dedicated to providing our customers with the best possible shopping experience. Our store was established in 2010 with the goal of offering high-quality mobile phones and accessories at affordable prices. Since then, we have evolved to meet the changing needs of our customers by expanding our product line and offering new services such as phone repairs and trade-ins. At our mobile store, we believe that everyone deserves access to high-quality mobile phones and accessories at affordable prices. That’s why we work hard to source the best products from around the world and offer them at prices that are accessible to everyone.</p>
+        <p> Welcome to our mobile store! We are dedicated to providing our customers with the best possible shopping experience. Our store was established in 2010 with the goal of offering high-quality mobile phones and accessories at affordable prices. Since then, we have evolved to meet the changing needs of our customers by expanding our product line and offering new services such as phone repairs and trade-ins. At our mobile store, we believe that everyone deserves access to high-quality mobile phones and accessories at affordable prices. That’s why we work hard to source the best products from around the world and offer them at prices that are accessible to everyone.</p>
       </div>
       <div class="col-md-4">
         <img src="images/phones2.jpg" class="card-img-top mt-3" alt="Mobile Phones on About Us Section" />
@@ -74,3 +74,4 @@
   </div>
 
 </asp:Content>
+
