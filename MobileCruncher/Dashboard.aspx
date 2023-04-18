@@ -332,6 +332,31 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [manufacturers] WHERE [id] = @id" InsertCommand="INSERT INTO [manufacturers] ([name]) VALUES (@name)" SelectCommand="SELECT * FROM [manufacturers]" UpdateCommand="UPDATE [manufacturers] SET [name] = @name WHERE [id] = @id">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="name" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="id" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [processor_types] WHERE [id] = @id" InsertCommand="INSERT INTO [processor_types] ([name]) VALUES (@name)" SelectCommand="SELECT * FROM [processor_types]" UpdateCommand="UPDATE [processor_types] SET [name] = @name WHERE [id] = @id">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="name" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="id" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+
     <div class="lists">
         <div class="manufacturer_container">
             <h4 class="text-center mt-3 mc-color-secondary">Manufacturers List</h4>

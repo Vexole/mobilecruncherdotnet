@@ -29,16 +29,18 @@ namespace MobileCruncher
 
         protected void LnkBtnProcInsert_Click(object sender, EventArgs e)
         {
-            sqlDSProcessorTypes.InsertParameters["name"].DefaultValue =
+            SqlDataSource3.InsertParameters["name"].DefaultValue =
                 ((TextBox)grdViewProcessorTypes.FooterRow.FindControl("txtProcessor")).Text;
-            sqlDSProcessorTypes.Insert();
+            SqlDataSource3.Insert();
+            Response.Redirect("~/Dashboard.aspx");
         }
 
         protected void LnkBtnManuInsert_Click(object sender, EventArgs e)
         {
-            sqlDSManufacturers.InsertParameters["name"].DefaultValue =
+            SqlDataSource2.InsertParameters["name"].DefaultValue =
                 ((TextBox)grdViewManufacturers.FooterRow.FindControl("txtManufacturer")).Text;
-            sqlDSManufacturers.Insert();
+            SqlDataSource2.Insert();
+            Response.Redirect("~/Dashboard.aspx");
         }
 
         protected void dtlViewProductDetails_ItemDeleted(object sender, System.Web.UI.WebControls.DetailsViewDeletedEventArgs e)
