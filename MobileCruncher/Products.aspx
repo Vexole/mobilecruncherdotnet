@@ -5,7 +5,7 @@
 
             <asp:Repeater ID="ProductTiles" runat="server" DataSourceID="ProductsList" OnItemCommand="ProductTiles_ItemCommand">
             <ItemTemplate>
-                <div class='py-5 col-4'>
+                <div id="products-container" class='py-5 col-md-4'>
                     <div class='container'>
                         <div>
                             <div class='card p-3 text-wrap d-flex flex-column align-items-center'>
