@@ -193,6 +193,16 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\huawei_mate_40_pro.jpg" />
+    <Content Include="Images\iphone_13_pro_max.jpg" />
+    <Content Include="Images\lg_v60_thinq_5g.jpg" />
+    <Content Include="Images\motorola_moto_g_power.jpg" />
+    <Content Include="Images\nokia_7.2.jpg" />
+    <Content Include="Images\oppo_find_x3_pro.jpg" />
+    <Content Include="Images\samsung_galaxy_s21_ultra.jpg" />
+    <Content Include="Images\sony_xperia_1_iii.jpg" />
+    <Content Include="Images\vivo_x60_pro+.jpg" />
+    <Content Include="Images\xiaomi_mi_11_ultra.jpg" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
