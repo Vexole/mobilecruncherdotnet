@@ -193,6 +193,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\default.jpg" />
     <Content Include="Images\huawei_mate_40_pro.jpg" />
     <Content Include="Images\iphone_13_pro_max.jpg" />
     <Content Include="Images\lg_v60_thinq_5g.jpg" />

@@ -52,10 +52,7 @@
             <asp:Button ID="btnGoogleShare" runat="server" CssClass="btn btn-outline-primary btn-rounded me-3" Text="Share on Google+" OnClick="btnGoogleShare_Click" />
 
             <asp:Button ID="btnLinkedInShare" runat="server" CssClass="btn btn-outline-primary btn-rounded" Text="Share on LinkedIn" OnClick="btnLinkedInShare_Click" />
-
     </div>
-
-
 
     <script type="text/javascript">
         function linkedinShare(url) {

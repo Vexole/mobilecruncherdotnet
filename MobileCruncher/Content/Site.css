@@ -62,6 +62,16 @@ input[type="select"] {
 
 .product-image {
     width: 25%;
+    object-fit: contain;
+}
+
+.product_qty {
+    width: 80px;
+}
+
+.product_detail_cta {
+    display: flex;
+    justify-content: space-between;
 }
 
 footer {
@@ -75,6 +85,15 @@ footer p {
 
 #socialLoginForm {
     display: none;
+}
+
+.lists {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product_details_container {
+    display: flex;
 }
 
 /* Responsive: Portrait tablets and up */

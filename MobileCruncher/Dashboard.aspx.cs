@@ -16,6 +16,15 @@ namespace MobileCruncher
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
+
+            if (IsPostBack)
+            {
+                dtlViewProductDetails.Visible = true;
+            }
+            else
+            {
+                dtlViewProductDetails.Visible = false;
+            }
         }
 
         protected void LnkBtnProcInsert_Click(object sender, EventArgs e)
@@ -85,6 +94,11 @@ namespace MobileCruncher
         protected void grdViewManufacturers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void grdViewProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtlViewProductDetails.Visible = true;
         }
     }
 }
