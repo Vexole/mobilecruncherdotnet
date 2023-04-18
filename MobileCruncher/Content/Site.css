@@ -18,14 +18,14 @@
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input[type="text"],
+/*input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
     max-width: 300px;
 }
-
+*/
 .select-view {
     appearance: none;
     border: none;
@@ -43,6 +43,14 @@ input[type="select"] {
     color: #2163c6;
 }
 
+.mc-color-secondary {
+    color: #e1ab0b;
+}
+
+.mc-color-gray-02 {
+    color: #505050;
+}
+
 .navbar-brand {
     font-weight: 700;
     color: #ffffff !important;
@@ -50,6 +58,10 @@ input[type="select"] {
 
 .nav-link {
     color: #ffffff !important;
+}
+
+.product-image {
+    width: 25%;
 }
 
 footer {

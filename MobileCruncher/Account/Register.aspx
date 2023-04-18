@@ -2,12 +2,12 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <main aria-labelledby="title">
-        <h2 id="title" class="text-center mc-color-primary"><%: Title %>.</h2>
+        <h2 id="title" class="text-center mc-color-primary"><%: Title %></h2>
         <div class="card col-md-6 mx-auto p-3">
             <p class="text-danger">
                 <asp:Literal runat="server" ID="ErrorMessage" />
             </p>
-            <asp:ValidationSummary runat="server" CssClass="text-danger" />
+            <asp:ValidationSummary runat="server" CssClass="text-danger text-center" />
             <div class="row justify-content-center">
                 <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-3 col-form-label">Email</asp:Label>
                 <div class="col-md-7">
