@@ -46,12 +46,12 @@
     </asp:DropDownList>
     <asp:Button ID="btnAddToCart" runat="server" CssClass="btn btn-primary" OnClick="btnAddToCart_Click" Text="Add to Cart" />
     </div>
-    <div class=" d-flex w-50 mx-auto justify-content-around">
-           <asp:Button ID="btnFacebookShare" runat="server" CssClass="bg-secondary btn btn-sm p-2 text-white border-0 rounded" Text="Share on Facebook" OnClick="btnFacebookShare_Click" />
+    <div class="d-flex mx-auto col-md-4 mt-5">
+           <asp:Button ID="btnFacebookShare" runat="server" CssClass="btn btn-outline-primary btn-rounded me-3" Text="Share on Facebook" OnClick="btnFacebookShare_Click" />
 
-            <asp:Button ID="btnGoogleShare" runat="server" CssClass="bg-secondary btn btn-sm p-2 text-white border-0 rounded" Text="Share on Google+" OnClick="btnGoogleShare_Click" />
+            <asp:Button ID="btnGoogleShare" runat="server" CssClass="btn btn-outline-primary btn-rounded me-3" Text="Share on Google+" OnClick="btnGoogleShare_Click" />
 
-            <asp:Button ID="btnLinkedInShare" runat="server" CssClass="bg-secondary btn btn-sm p-2 text-white border-0 rounded" Text="Share on LinkedIn" OnClick="btnLinkedInShare_Click" />
+            <asp:Button ID="btnLinkedInShare" runat="server" CssClass="btn btn-outline-primary btn-rounded" Text="Share on LinkedIn" OnClick="btnLinkedInShare_Click" />
 
     </div>
 
