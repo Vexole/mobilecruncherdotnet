@@ -197,6 +197,7 @@
     <Content Include="Images\huawei_mate_40_pro.jpg" />
     <Content Include="Images\iphone_13_pro_max.jpg" />
     <Content Include="Images\lg_v60_thinq_5g.jpg" />
+    <Content Include="Images\mc-logo.png" />
     <Content Include="Images\motorola_moto_g_power.jpg" />
     <Content Include="Images\nokia_7.2.jpg" />
     <Content Include="Images\oppo_find_x3_pro.jpg" />
