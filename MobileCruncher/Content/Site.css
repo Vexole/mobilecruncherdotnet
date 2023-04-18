@@ -108,8 +108,22 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
+    .benefits-item {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    .testimonials-item {
+        margin-right: 0 !important;
+    }
+
     #products-container {
         width: 100%;
+    }
+
+    #MainContent_imgProduct {
+        margin-left: 0 !important;
+        margin-bottom: 32px !important;
     }
 
     .lists, .product_details_container {

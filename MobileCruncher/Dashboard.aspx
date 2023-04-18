@@ -11,8 +11,8 @@
     
     <h4 class="text-center mc-color-secondary">Products List</h4>
     <div class="product_details_container mx-auto justify-content-center">
-        <div class="d-flex mt-3">
-            <asp:GridView ID="grdViewProducts" runat="server" DataSourceID="sqlDSProductsList" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="me-4" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdViewProducts_SelectedIndexChanged">
+        <div class="d-flex mt-3 table-responsive-sm">
+            <asp:GridView ID="grdViewProducts" runat="server" DataSourceID="sqlDSProductsList" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="me-4 table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdViewProducts_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
@@ -35,8 +35,8 @@
             </asp:GridView>
         </div>
 
-        <div class="d-flex mt-4">
-            <asp:DetailsView ID="dtlViewProductDetails" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+        <div class="d-flex mt-4 table-responsive-sm">
+            <asp:DetailsView ID="dtlViewProductDetails" runat="server" CssClass="table" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
                 <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                 <Fields>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
@@ -332,8 +332,8 @@
     <div class="lists">
         <div class="manufacturer_container">
             <h4 class="text-center mt-3 mc-color-secondary">Manufacturers List</h4>
-            <div class="d-flex mt-3 mx-auto justify-content-center">
-                <asp:GridView ID="grdViewManufacturers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+            <div class="d-flex mt-3 mx-auto justify-content-center table-responsive-sm">
+                <asp:GridView ID="grdViewManufacturers" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
                         <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
                             <EditItemTemplate>
@@ -386,8 +386,8 @@
     
         <div class="processor_types_container">
             <h4 class="text-center mt-3 mc-color-secondary">Processors List</h4>
-            <div class="d-flex mt-3 mx-auto justify-content-center">
-                <asp:GridView ID="grdViewProcessorTypes" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+            <div class="d-flex mt-3 mx-auto justify-content-center table-responsive-sm">
+                <asp:GridView ID="grdViewProcessorTypes" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
                         <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
                             <EditItemTemplate>
