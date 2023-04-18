@@ -203,6 +203,7 @@
     <Content Include="Images\phones.jpeg" />
     <Content Include="Images\samsung_galaxy_s21_ultra.jpg" />
     <Content Include="Images\sony_xperia_1_iii.jpg" />
+    <Content Include="Images\thankyoufororder.png" />
     <Content Include="Images\vivo_x60_pro_plus.jpg" />
     <Content Include="Images\xiaomi_mi_11_ultra.jpg" />
     <Content Include="ProductDetail.aspx" />
