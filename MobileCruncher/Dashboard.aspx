@@ -36,8 +36,11 @@
         </div>
 
         <div class="d-flex mt-4 table-responsive-sm">
-            <asp:DetailsView ID="dtlViewProductDetails" runat="server" CssClass="table" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
-                <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <asp:DetailsView ID="dtlViewProductDetails" runat="server" CssClass="table" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="sqlDSProductDetails" Height="50px" Width="125px" OnItemDeleted="dtlViewProductDetails_ItemDeleted" OnItemInserted="dtlViewProductDetails_ItemInserted" OnItemUpdated="dtlViewProductDetails_ItemUpdated" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
+                <EditRowStyle BackColor="#999999" />
+                <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
                 <Fields>
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
                     <asp:TemplateField HeaderText="Name" SortExpression="Name">
@@ -201,10 +204,10 @@
                     </asp:TemplateField>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
                 </Fields>
-                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="White" HorizontalAlign="Center" BackColor="#284775" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
             </asp:DetailsView>
         </div>
     </div>
@@ -333,7 +336,8 @@
         <div class="manufacturer_container">
             <h4 class="text-center mt-3 mc-color-secondary">Manufacturers List</h4>
             <div class="d-flex mt-3 mx-auto justify-content-center table-responsive-sm">
-                <asp:GridView ID="grdViewManufacturers" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                <asp:GridView ID="grdViewManufacturers" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSManufacturers" ShowFooter="True" CellPadding="4" GridLines="None" ForeColor="#333333">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
                             <EditItemTemplate>
@@ -343,7 +347,7 @@
                                 <asp:Label ID="lblManufacturerId" runat="server" Text='<%# Bind("id") %>'></asp:Label>
                             </ItemTemplate>
                              <FooterTemplate>
-                                <asp:LinkButton ID="lnkBtnManuInsert" runat="server" OnClick="LnkBtnManuInsert_Click" ValidationGroup="manufacturer">Insert</asp:LinkButton>
+                                <asp:LinkButton ID="lnkBtnManuInsert" runat="server" OnClick="LnkBtnManuInsert_Click" ValidationGroup="manufacturer" CssClass="white">Insert</asp:LinkButton>
                             </FooterTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name" SortExpression="name">
@@ -367,19 +371,20 @@
                                 &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
                             </ItemTemplate>
                             <FooterTemplate>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtManufacturer" ValidationGroup="manufacturer" CssClass="red"></asp:RequiredFieldValidator>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtManufacturer" ValidationGroup="manufacturer" CssClass="white"></asp:RequiredFieldValidator>
                             </FooterTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <FooterStyle BackColor="White" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="White" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#487575" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#275353" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             </div>
         </div>
@@ -387,7 +392,8 @@
         <div class="processor_types_container">
             <h4 class="text-center mt-3 mc-color-secondary">Processors List</h4>
             <div class="d-flex mt-3 mx-auto justify-content-center table-responsive-sm">
-                <asp:GridView ID="grdViewProcessorTypes" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes" ShowFooter="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                <asp:GridView ID="grdViewProcessorTypes" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="sqlDSProcessorTypes" ShowFooter="True" CellPadding="4" GridLines="None" ForeColor="#333333">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:TemplateField HeaderText="Id" InsertVisible="False" SortExpression="id">
                             <EditItemTemplate>
@@ -397,7 +403,7 @@
                                 <asp:Label ID="lblProcessorId" runat="server" Text='<%# Bind("id") %>'></asp:Label>
                             </ItemTemplate>
                             <FooterTemplate>
-                                <asp:LinkButton ID="lnkBtnProcInsert" runat="server" OnClick="LnkBtnProcInsert_Click" ValidationGroup="processor">Insert</asp:LinkButton>
+                                <asp:LinkButton ID="lnkBtnProcInsert" runat="server" OnClick="LnkBtnProcInsert_Click" ValidationGroup="processor" CssClass="white">Insert</asp:LinkButton>
                             </FooterTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name" SortExpression="name">
@@ -421,19 +427,20 @@
                                 &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
                             </ItemTemplate>
                             <FooterTemplate>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtProcessor" ValidationGroup="processor" CssClass="red"></asp:RequiredFieldValidator>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="This field is required." Display="Dynamic" ControlToValidate="txtProcessor" ValidationGroup="processor" CssClass="white"></asp:RequiredFieldValidator>
                             </FooterTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <FooterStyle BackColor="White" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="White" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#487575" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#275353" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             </div>
         </div>

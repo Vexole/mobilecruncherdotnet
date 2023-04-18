@@ -18,7 +18,7 @@
             <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
             <Fields >
                 <asp:BoundField DataField="Name" HeaderText="Name:" SortExpression="Name" />
-                <asp:BoundField DataField="Price" HeaderText="Price:" SortExpression="Price" />
+                <asp:BoundField DataField="Price" HeaderText="Price:" SortExpression="Price" DataFormatString="{0:c}" />
                 <asp:BoundField DataField="RAM" HeaderText="RAM:" SortExpression="RAM" />
                 <asp:BoundField DataField="StorageCapacity" HeaderText="StorageCapacity:" SortExpression="StorageCapacity" />
                 <asp:BoundField DataField="ScreenSize" HeaderText="ScreenSize:" SortExpression="ScreenSize" />

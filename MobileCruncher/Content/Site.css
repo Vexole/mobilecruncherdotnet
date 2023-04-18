@@ -10,6 +10,10 @@
     color: red;
 }
 
+.white {
+    color: white;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -62,6 +66,7 @@ input[type="select"] {
 
 .product-image {
     width: 25%;
+    max-height: 375px;
     object-fit: contain;
 }
 
